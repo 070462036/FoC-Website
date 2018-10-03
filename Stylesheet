@@ -1,0 +1,370 @@
+/* This applies to the entire page and changes the default box model so that containers are not affecred by border thickness or padding */
+* {
+	box-sizing: border-box;
+}
+
+h1 {
+	font-family: Helvetica;
+	font-size: 50px;
+	color: #466995;
+	text-decoration: underline;
+	text-align: center;
+}
+
+h2 {
+	color: #466995;
+	/* If the font 'Oswald' is unavailable then any pre-installed sans-serif font will be used */
+	font-family: 'Oswald', sans-serif;
+	font-size: 18px;
+	text-align: center;
+	/* This sets the style of the font to bold */
+	font-weight: 700;
+	text-transform: uppercase;
+	padding: 30px;
+	text-decoration: underline;
+}
+
+
+h3 {
+  color: #466995;
+  font-family: 'Oswald', sans-serif;
+  font-size: 12px;
+  /* This sets the style of the font to light */
+  font-weight: 300;
+  /* This sets the space between each letter to 2 pixels */
+  letter-spacing: 2px;
+  text-align: center;
+  text-transform: uppercase
+}
+
+body {
+	background-color: grey;
+}
+
+#intro {
+	font-size: 25px;
+	text-align: center;
+	font-family: 'Oswald', sans-serif;
+}
+
+#upcoming-events {
+	background-color: #FF6161;
+}
+	
+.defs {
+	/* sets the width of the border to 10px and the style to double-lined */
+	border: 10px double #de1b1b;
+	padding: 15px;
+	text-transform: uppercase;
+	font-size: 18px;
+	text-align: center;
+	font-weight: bold;
+	font-family: 'Oswald', sans-serif;
+}
+
+/* If the mouse hovers over a definition, then the background-colour turns green */
+.defs:hover {
+	background-color: green;
+}
+
+
+.grid {
+	/* This sets the container to a grid */
+	display: grid;
+	/* splits the grid up into columns and rows - there are 3 rows which each take up a third of 
+	the space, and there are 3 columns - two take up 2.5/11ths of the space and the other takes up
+	6/11ths. */
+	grid-template: 1fr 1fr 1fr / 2.5fr 6fr 2.5fr;
+	border: 12px solid #de1b1b;
+	margin-top: 10px;
+	grid-gap: 10px;
+}
+
+.header {
+	background-repeat: no-repeat;
+	background-color: #DBE9EE;
+	/* The height of the header cannot go under 200px, even if browser is resized */
+	min-height: 200px;
+	font-size: 15px;
+	text-align: center;
+	border-bottom: 12px solid #de1b1b;
+	padding-bottom: 15px;
+}
+
+.middleContent {
+	color: white;
+	min-height: 200px;
+	/* Shorthand for grid-row-start / grid-column-start / grid-row-end /
+	grid-column-end (add 1 to the grid-row/column-ends)*/
+	grid-area: 1 / 2 / 4 / 2; 
+	font-size: 18px;
+	background-color: #149cad;
+	border-radius: 25px;
+}
+
+.leftContent {
+	background-color: #0d7582;
+	grid-area: 1 / 1 / 4 / 2;
+	font-size: 18px;
+	border-radius: 25px;
+}
+
+.rightContent {
+	background-color: #0d7582;
+	grid-area: 1 / 3 / 4 / 4;
+	border-radius: 25px;
+}
+
+.leftButton {
+	background-color: #14cae0;
+	border: 8px double #de1b1b;
+	height: 45px;
+	margin: 20px 0px;
+}
+
+.leftButton a {
+	color: blue;
+	font-family: 'Oswald', sans-serif;
+	font-size: 15px;
+	font-weight: 300;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+.leftButton:hover {
+	background-color: #4CAF50;
+}
+
+.footer {
+	/*These make the colored bar across screen*/
+	background-repeat: no-repeat;
+	background-color: #DBE9EE;
+	min-height: 25px;
+	font-size: 20px;
+	/*This defines its place on page */
+	grid-area: 4 / 1 / 4 / 4;
+	text-decoration: none;
+}
+
+/* Anything in the footer section will overrule any rules stated in h2 */
+.footer > h2 {
+	text-decoration: none;
+}
+
+.top_image {
+	height: 80px;
+	width = 80px;
+	margin-top: 30px;
+}
+
+nav {
+	display: inline-block;
+	padding-left: 22.5%;
+}
+
+.navBar {
+	list-style:none;
+    padding-left:0;
+}
+
+/* Style The Dropdown Button */
+.dropbtn {
+	/* Makes the buttons green */
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+	/* Cursor turns to a pointer when hovering over a button */
+    cursor: pointer;
+	/* Puts a double red border around each button */
+	border-color: #de1b1b;
+	border-style: double;
+	margin-top: 10px;
+	text-align: center;
+	justify-content: center;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative; 
+	/* inline means the buttons are displayed next to eachother, block means there is whitespace around button*/
+    display: inline-block;
+}
+
+/* Dropdown Content - the box containing the links (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+	/* This puts a shadow of 8px around bottom of dropdown and blur of 16px
+	it is black and has opacity of 50% */
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.5);
+	z-index: 5;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+	background-color: #f1f1f1;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+}
+
+.sub-content {
+	display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+	/* This puts a shadow of 8px around bottom of dropdown and blur of 16px
+	it is black and has opacity of 50% */
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.5);
+	height: 100%;
+}
+
+/* Links inside the dropdown */
+.sub-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content li:hover .sub-content {
+	display: block;
+	left: 100%;
+	top: 5%;
+	z-index: 5;
+}
+
+.arrow-left {
+  width: 0; 
+  height: 0; 
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent; 
+  
+  border-right:10px solid blue; 
+}
+
+.arrow-right {
+  width: 0; 
+  height: 0; 
+  border-top: 60px solid transparent;
+  border-bottom: 60px solid transparent;
+  border-left: 60px solid green;
+  position: relative;
+	top: 73%;
+	left: 48%;
+}
+
+.arrowText {
+	position: relative;
+	top:78%;
+	text-align: center;
+	color: #de1b1b;
+	font-size: 15px;
+}
+
+
+/*ANYTHING FROM THIS POINT ON IS HOW TO MAKE A SPEECH BUBBLE */
+.rectangle-speech-border {
+  position:relative;
+  width: 100%;
+  height: 190px;
+  padding: 5px;
+  margin:1em 0 3em;
+  border:10px solid #5a8f00;
+  color:#333;
+  background:#fff;
+  /* css3 */
+  -webkit-border-radius:20px;
+  -moz-border-radius:20px;
+  border-radius:20px;
+  text-align:center;
+  font-size: 20px;
+  clear: right;
+}
+
+/* creates larger curve */
+.rectangle-speech-border:before {
+  content:"";
+  position:absolute;
+  z-index:10;
+  bottom:-40px;
+  left:50px;
+  width:50px;
+  height:30px;
+  border-style:solid;
+  border-width:0 10px 10px 0;
+  border-color:#5a8f00;
+  background:transparent;
+  /* css3 */
+  -webkit-border-bottom-right-radius:80px 50px;
+  -moz-border-radius-bottomright:80px 50px;
+  border-bottom-right-radius:80px 50px;
+  /* reduce the damage in FF3.0 */
+  display:block;
+}
+
+/* creates smaller curve */
+.rectangle-speech-border:after {
+  content:"";
+  position:absolute;
+  z-index:10;
+  bottom:-40px;
+  left:50px;
+  width:20px;
+  height:30px;
+  border-style:solid;
+  border-width:0 10px 10px 0;
+  border-color:#5a8f00;
+  background:transparent;
+  /* css3 */
+  -webkit-border-bottom-right-radius:40px 50px;
+  -moz-border-radius-bottomright:40px 50px;
+  border-bottom-right-radius:40px 50px;
+  /* reduce the damage in FF3.0 */
+  display:block;
+}
+
+/* creates a small circle to produce a rounded point where the two curves meet */
+.rectangle-speech-border > :first-child:before {
+  content:"";
+  position:absolute;
+  bottom:-40px;
+  left:45px;
+  width:10px;
+  height:10px;
+  background:#5a8f00;
+  /* css3 */
+  -webkit-border-radius:10px;
+  -moz-border-radius:10px;
+  border-radius:10px;
+}
+
+/* creates a white rectangle to cover part of the oval border*/
+.rectangle-speech-border > :first-child:after {
+  content:"";
+  position:absolute;
+  bottom:-10px;
+  left:76px;
+  width:24px;
+  height:15px;
+  background:#fff;
+}
