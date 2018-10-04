@@ -8,12 +8,13 @@
 
 /*CSS for fixed nav - fine */
 #fixed-nav {
-    width: 50px;
+    width: 200px;
     height: 70px;
-    background-color: black;
-    color: white;
+    background-color: white;
+    color: blue;
     position: fixed;
     text-align: center;
+    border-radius:55px;
     }
 
 /*CSS for slideshow --- i don't really understand it, but it's probably not good.  Pls fix*/
